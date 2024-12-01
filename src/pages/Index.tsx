@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Clock, Smartphone, Users, Check, ChevronRight, Share2, LineChart, Bell } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import PhoneMockup from "@/components/PhoneMockup";
+import Features from "@/components/Features";
+import Testimonials from "@/components/Testimonials";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -70,22 +73,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              {/* iPhone 14/15 Mockup */}
-              <div className="relative mx-auto max-w-[300px] aspect-[9/19.5]">
-                {/* Phone Frame */}
-                <div className="absolute inset-0 w-full h-full bg-black rounded-[3rem] p-3 shadow-2xl">
-                  {/* Dynamic Island */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120px] h-[35px] bg-black rounded-b-3xl z-20" />
-                  {/* Screen Content */}
-                  <div className="absolute inset-0 w-full h-full rounded-[2.5rem] overflow-hidden bg-white">
-                    <img
-                      src="/lovable-uploads/923f6c12-4c21-43e9-8501-8740fa0acf81.png"
-                      alt="Delivery tracking interface showing order status and map"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                </div>
-              </div>
+              <PhoneMockup />
             </motion.div>
           </div>
         </div>
@@ -103,24 +91,7 @@ const Index = () => {
               making it seamless and effective.
             </p>
           </div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-                className="glass p-6 rounded-2xl hover-scale"
-              >
-                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-accent" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
+          <Features />
         </div>
       </section>
 
@@ -135,27 +106,7 @@ const Index = () => {
               Join thousands of others who are taking control of their digital habits.
             </p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-                className="glass p-6 rounded-2xl"
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-accent/10" />
-                  <div>
-                    <h4 className="font-semibold">{testimonial.name}</h4>
-                    <p className="text-sm text-muted-foreground">{testimonial.title}</p>
-                  </div>
-                </div>
-                <p className="text-muted-foreground">{testimonial.quote}</p>
-              </motion.div>
-            ))}
-          </div>
+          <Testimonials />
         </div>
       </section>
 
@@ -224,46 +175,5 @@ const Index = () => {
     </div>
   );
 };
-
-const features = [
-  {
-    icon: Users,
-    title: "Connect",
-    description: "Partner with someone you trust to keep each other accountable for screen time goals.",
-  },
-  {
-    icon: Share2,
-    title: "Share",
-    description: "Your screen time data is automatically shared with your buddy daily or weekly.",
-  },
-  {
-    icon: LineChart,
-    title: "Track",
-    description: "View insights and progress over time to understand your digital habits better.",
-  },
-  {
-    icon: Bell,
-    title: "Notify",
-    description: "Get gentle reminders and celebrate achievements with your accountability partner.",
-  },
-];
-
-const testimonials = [
-  {
-    name: "Sarah Chen",
-    title: "Product Designer",
-    quote: "Accountability transformed how I use my phone. Can't wait for ScreenTimeBuddy to launch!",
-  },
-  {
-    name: "Michael Rodriguez",
-    title: "Software Engineer",
-    quote: "Having a buddy system for screen time is genius. This is exactly what I needed.",
-  },
-  {
-    name: "Emma Thompson",
-    title: "Content Creator",
-    quote: "As someone who struggles with phone addiction, this app gives me hope for better habits.",
-  },
-];
 
 export default Index;
