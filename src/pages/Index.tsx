@@ -1,75 +1,103 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Clock, Smartphone, Users, Check } from "lucide-react";
+import { Clock, Smartphone, Users, Check, ChevronRight, Share2, LineChart, Bell } from "lucide-react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 const Index = () => {
   const [email, setEmail] = useState("");
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle email submission
     console.log("Email submitted:", email);
     setEmail("");
+    setShowAlert(true);
+    setTimeout(() => setShowAlert(false), 3000);
   };
 
   return (
     <div className="min-h-screen bg-background">
+      {showAlert && (
+        <Alert className="fixed top-4 right-4 w-auto bg-accent text-white animate-fade-in">
+          <AlertDescription>Thanks for joining! We'll be in touch soon.</AlertDescription>
+        </Alert>
+      )}
+
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="container px-4 mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto"
-          >
-            <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-accent/10 text-accent rounded-full">
-              Coming Soon
-            </span>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
-              Stay Accountable. Reduce Screen Time.{" "}
-              <span className="text-accent">Together.</span>
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Connect with a buddy and automatically share screen time updates.
-              Build better digital habits through accountability.
-            </p>
-            <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-lg border bg-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-accent"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="px-6 py-3 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-colors"
-                >
-                  Get Early Access
-                </button>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
+        <div className="container px-4 mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-left"
+            >
+              <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-accent/10 text-accent rounded-full">
+                Coming Soon
+              </span>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
+                Stay Accountable. Reduce Screen Time.{" "}
+                <span className="text-accent">Together.</span>
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground mb-8">
+                Connect with a buddy and automatically share screen time updates.
+                Build better digital habits through accountability.
+              </p>
+              <form onSubmit={handleSubmit} className="max-w-md">
+                <div className="flex gap-2">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="flex-1 px-4 py-3 rounded-lg border bg-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-accent"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="px-6 py-3 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-colors flex items-center gap-2"
+                  >
+                    Get Early Access
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </form>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative mx-auto max-w-[300px] aspect-[9/19.5] bg-black rounded-[3rem] p-3 shadow-2xl">
+                <div className="absolute inset-0 w-full h-full rounded-[2.5rem] overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9"
+                    alt="ScreenTimeBuddy App Interface"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-            </form>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* How It Works Section */}
       <section className="py-24 bg-secondary">
         <div className="container px-4 mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              How ScreenTimeBuddy Works
+              Automating Accountability: A Seamless Way to Build Digital Discipline
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              We've automated the proven practice of sharing screen time with a
-              coach or friend, making it seamless and effective.
+              We've automated the proven practice of sharing screen time with a coach or friend,
+              making it seamless and effective.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -89,16 +117,50 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Testimonials Section */}
       <section className="py-24">
+        <div className="container px-4 mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why Accountability Works for Screen Time Management
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Join thousands of others who are taking control of their digital habits.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2 }}
+                className="glass p-6 rounded-2xl"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-accent/10" />
+                  <div>
+                    <h4 className="font-semibold">{testimonial.name}</h4>
+                    <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                  </div>
+                </div>
+                <p className="text-muted-foreground">{testimonial.quote}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-secondary">
         <div className="container px-4 mx-auto text-center">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Take Control of Your Screen Time?
+              Don't miss out—sign up for early access today!
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Join the waitlist and be among the first to experience ScreenTimeBuddy
-              when we launch.
+              Join the waitlist and be among the first to experience ScreenTimeBuddy when we launch.
             </p>
             <form onSubmit={handleSubmit} className="max-w-md mx-auto">
               <div className="flex gap-2">
@@ -159,21 +221,41 @@ const Index = () => {
 const features = [
   {
     icon: Users,
-    title: "Connect with a Buddy",
-    description:
-      "Partner with someone you trust to keep each other accountable for screen time goals.",
+    title: "Connect",
+    description: "Partner with someone you trust to keep each other accountable for screen time goals.",
   },
   {
-    icon: Smartphone,
-    title: "Automatic Updates",
-    description:
-      "Your screen time data is automatically shared with your buddy daily.",
+    icon: Share2,
+    title: "Share",
+    description: "Your screen time data is automatically shared with your buddy daily or weekly.",
   },
   {
-    icon: Check,
-    title: "Build Better Habits",
-    description:
-      "Track progress, celebrate wins, and develop healthier digital habits together.",
+    icon: LineChart,
+    title: "Track",
+    description: "View insights and progress over time to understand your digital habits better.",
+  },
+  {
+    icon: Bell,
+    title: "Notify",
+    description: "Get gentle reminders and celebrate achievements with your accountability partner.",
+  },
+];
+
+const testimonials = [
+  {
+    name: "Sarah Chen",
+    title: "Product Designer",
+    quote: "Accountability transformed how I use my phone. Can't wait for ScreenTimeBuddy to launch!",
+  },
+  {
+    name: "Michael Rodriguez",
+    title: "Software Engineer",
+    quote: "Having a buddy system for screen time is genius. This is exactly what I needed.",
+  },
+  {
+    name: "Emma Thompson",
+    title: "Content Creator",
+    quote: "As someone who struggles with phone addiction, this app gives me hope for better habits.",
   },
 ];
 
