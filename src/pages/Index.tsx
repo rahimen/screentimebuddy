@@ -70,13 +70,20 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative mx-auto max-w-[300px] aspect-[9/19.5] bg-black rounded-[3rem] p-3 shadow-2xl">
-                <div className="absolute inset-0 w-full h-full rounded-[2.5rem] overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9"
-                    alt="ScreenTimeBuddy App Interface"
-                    className="w-full h-full object-cover"
-                  />
+              {/* iPhone 14/15 Mockup */}
+              <div className="relative mx-auto max-w-[300px] aspect-[9/19.5]">
+                {/* Phone Frame */}
+                <div className="absolute inset-0 w-full h-full bg-black rounded-[3rem] p-3 shadow-2xl">
+                  {/* Dynamic Island */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120px] h-[35px] bg-black rounded-b-3xl z-20" />
+                  {/* Screen Content */}
+                  <div className="absolute inset-0 w-full h-full rounded-[2.5rem] overflow-hidden bg-white">
+                    <img
+                      src="/lovable-uploads/ae1d7260-d9e8-410f-b0eb-7c87789fe4f9.png"
+                      alt="ScreenTimeBuddy App Interface showing daily screen time statistics"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
               </div>
             </motion.div>
