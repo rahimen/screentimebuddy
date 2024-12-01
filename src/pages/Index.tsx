@@ -81,7 +81,7 @@ const Index = () => {
                     <img
                       src="/lovable-uploads/923f6c12-4c21-43e9-8501-8740fa0acf81.png"
                       alt="Delivery tracking interface showing order status and map"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 </div>
