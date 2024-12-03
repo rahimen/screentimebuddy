@@ -26,6 +26,11 @@ const quotes = [
     title: "Author of The 5 AM Club",
     quote: "All change is hard at first, messy in the middle, and gorgeous at the end.",
   },
+  {
+    author: "Andrew Huberman",
+    title: "Neuroscientist, Host of Huberman Lab Podcast",
+    quote: "When we involve others in our goals—through accountability—we activate circuits in the brain that increase motivation and sustain focus over time.",
+  },
 ];
 
 const ExpertQuotes = () => {
