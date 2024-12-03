@@ -5,6 +5,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import PhoneMockup from "@/components/PhoneMockup";
 import Features from "@/components/Features";
 import Testimonials from "@/components/Testimonials";
+import ExpertQuotes from "@/components/ExpertQuotes";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -98,6 +99,23 @@ const Index = () => {
             </p>
           </div>
           <Features />
+        </div>
+      </section>
+
+      {/* Expert Quotes Section */}
+      <section className="py-24">
+        <div className="container px-4 mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Follow the Advice of World-Class Experts in Habit Building and Performance
+            </h2>
+            <p className="text-muted-foreground max-w-3xl mx-auto">
+              ScreenTimeBuddy integrates principles from the world's top habit and performance experts
+              to help you achieve your goals. Here's what they say about the power of accountability
+              and building better habits.
+            </p>
+          </div>
+          <ExpertQuotes />
         </div>
       </section>
 
