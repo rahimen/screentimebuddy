@@ -37,12 +37,15 @@ const Index = () => {
               className="text-left"
             >
               <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-accent/10 text-accent rounded-full">
-                Coming Soon
+                Beta Access Opening Soon
               </span>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
-                Stay Accountable. Reduce Screen Time.{" "}
-                <span className="text-accent">Together.</span>
+              <h1 className="text-5xl md:text-6xl font-bold mb-4 text-balance">
+                Master Your Digital Habits—Effortlessly Stay Accountable with{" "}
+                <span className="text-accent">ScreenTimeBuddy</span>
               </h1>
+              <p className="text-lg font-medium text-accent mb-6">
+                Limited spots available for the Beta—Don't miss out!
+              </p>
               <p className="text-lg md:text-xl text-muted-foreground mb-8">
                 Connect with a buddy and automatically share screen time updates.
                 Build better digital habits through accountability.
@@ -53,7 +56,7 @@ const Index = () => {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
+                    placeholder="Enter your email for early access"
                     className="flex-1 px-4 py-3 rounded-lg border bg-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-accent"
                     required
                   />
@@ -61,10 +64,13 @@ const Index = () => {
                     type="submit"
                     className="px-6 py-3 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-colors flex items-center gap-2"
                   >
-                    Get Early Access
+                    Reserve Your Spot
                     <ChevronRight className="w-4 h-4" />
                   </button>
                 </div>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Sign up for Beta access today. Spots are filling fast!
+                </p>
               </form>
             </motion.div>
             <motion.div
@@ -114,11 +120,12 @@ const Index = () => {
       <section className="py-24 bg-secondary">
         <div className="container px-4 mx-auto text-center">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Don't miss out—sign up for early access today!
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Limited Beta Access Closing Soon!
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Join the waitlist and be among the first to experience ScreenTimeBuddy when we launch.
+              Join the exclusive group of early adopters who will shape the future of digital wellness.
+              Don't wait—spots are limited!
             </p>
             <form onSubmit={handleSubmit} className="max-w-md mx-auto">
               <div className="flex gap-2">
@@ -134,9 +141,12 @@ const Index = () => {
                   type="submit"
                   className="px-6 py-3 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-colors"
                 >
-                  Join Waitlist
+                  Join Beta Waitlist
                 </button>
               </div>
+              <p className="text-sm text-muted-foreground mt-2">
+                Limited spots available. Join now to secure your place!
+              </p>
             </form>
           </div>
         </div>
