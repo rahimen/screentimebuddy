@@ -6,6 +6,7 @@ const quotes = [
     author: "James Clear",
     title: "Author of Atomic Habits",
     quote: "Get an accountability partner. Ask someone to watch your behavior. Create a habit contract. Make the costs of your bad habits public and painful.",
+    avatar: "/lovable-uploads/879176e6-de38-436d-bd08-22e34f6df63a.png"
   },
   {
     author: "BJ Fogg",
