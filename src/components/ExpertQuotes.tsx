@@ -27,6 +27,7 @@ const quotes = [
     author: "Robin Sharma",
     title: "Author of The Monk Who Sold His Ferrari",
     quote: "By developing relationships with those committed to constant improvement and the pursuit of the best that life has to offer, you will have plenty of company on your path to the top of whatever mountain you seek to climb.",
+    avatar: "/lovable-uploads/eb4153fb-734b-4083-80d9-f009b5471801.png"
   },
   {
     author: "Andrew Huberman",
