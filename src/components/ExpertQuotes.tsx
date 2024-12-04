@@ -18,6 +18,7 @@ const quotes = [
     author: "Ryan Holiday",
     title: "Author of The Daily Stoic and The Obstacle is the Way",
     quote: "Surround yourself with people who have the habits you want to have yourself. You'll rise together.",
+    avatar: "/lovable-uploads/9eb8fc3d-b21f-4bc9-99c3-905ff1dc299a.png"
   },
   {
     author: "Gretchen Rubin",
