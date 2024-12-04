@@ -11,7 +11,7 @@ const quotes = [
   {
     author: "BJ Fogg",
     title: "Author of Tiny Habits",
-    quote: "Simplicity changes behavior. The easier a behavior is to do, the more likely it is to become habit.",
+    quote: "When people feel connected, they do more. Relationships create a social context that makes new habits stick.",
   },
   {
     author: "Charles Duhigg",
