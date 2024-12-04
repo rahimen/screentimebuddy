@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 
 const quotes = [
   {
@@ -30,6 +31,7 @@ const quotes = [
     author: "Andrew Huberman",
     title: "Neuroscientist, Host of Huberman Lab Podcast",
     quote: "When we involve others in our goals—through accountability—we activate circuits in the brain that increase motivation and sustain focus over time.",
+    avatar: "/lovable-uploads/43aadf9f-0faa-4e52-ac4e-01032612d66e.png"
   },
 ];
 
@@ -47,9 +49,16 @@ const ExpertQuotes = () => {
           <div className="flex-1">
             <p className="text-lg mb-4 italic">"{quote.quote}"</p>
           </div>
-          <div>
-            <h4 className="font-semibold text-accent">{quote.author}</h4>
-            <p className="text-sm text-muted-foreground">{quote.title}</p>
+          <div className="flex items-center gap-3">
+            {quote.avatar && (
+              <Avatar className="w-12 h-12 border-2 border-accent">
+                <AvatarImage src={quote.avatar} alt="Expert avatar" />
+              </Avatar>
+            )}
+            <div>
+              <h4 className="font-semibold text-accent">{quote.author}</h4>
+              <p className="text-sm text-muted-foreground">{quote.title}</p>
+            </div>
           </div>
         </motion.div>
       ))}
