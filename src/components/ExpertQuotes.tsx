@@ -22,6 +22,7 @@ const quotes = [
     author: "Gretchen Rubin",
     title: "Author of Better Than Before",
     quote: "Accountability is the secret weapon for habit change.",
+    avatar: "/lovable-uploads/ef46b67e-1efa-4484-b921-1bc22e28b4e5.png"
   },
   {
     author: "Robin Sharma",
