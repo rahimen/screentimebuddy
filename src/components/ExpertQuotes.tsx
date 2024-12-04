@@ -10,8 +10,9 @@ const quotes = [
   },
   {
     author: "BJ Fogg",
-    title: "Author of Tiny Habits",
+    title: "Stanford Professor and Author of Tiny Habits",
     quote: "When people feel connected, they do more. Relationships create a social context that makes new habits stick.",
+    avatar: "/lovable-uploads/2e29efe1-8ce3-4f98-a353-0586a66109b1.png"
   },
   {
     author: "Charles Duhigg",
