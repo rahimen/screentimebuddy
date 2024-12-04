@@ -15,9 +15,9 @@ const quotes = [
     avatar: "/lovable-uploads/2e29efe1-8ce3-4f98-a353-0586a66109b1.png"
   },
   {
-    author: "Charles Duhigg",
-    title: "Author of The Power of Habit",
-    quote: "Once you understand that habits can change, you have the freedom—and the responsibility—to remake them.",
+    author: "Ryan Holiday",
+    title: "Author of The Daily Stoic and The Obstacle is the Way",
+    quote: "Surround yourself with people who have the habits you want to have yourself. You'll rise together.",
   },
   {
     author: "Gretchen Rubin",
