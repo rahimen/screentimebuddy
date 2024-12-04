@@ -25,8 +25,8 @@ const quotes = [
   },
   {
     author: "Robin Sharma",
-    title: "Author of The 5 AM Club",
-    quote: "All change is hard at first, messy in the middle, and gorgeous at the end.",
+    title: "Author of The Monk Who Sold His Ferrari",
+    quote: "By developing relationships with those committed to constant improvement and the pursuit of the best that life has to offer, you will have plenty of company on your path to the top of whatever mountain you seek to climb.",
   },
   {
     author: "Andrew Huberman",
