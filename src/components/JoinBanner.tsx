@@ -3,7 +3,7 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 
 const users = [
   "/lovable-uploads/501e99c1-46c8-4a11-b9e5-e7d783c90872.png",
-  "/lovable-uploads/ae1d7260-d9e8-410f-b0eb-7c87789fe4f9.png",
+  "/lovable-uploads/843a5550-102c-4fd3-8d42-e1f25861ea9c.png",
   "/lovable-uploads/a89e2a64-f187-4d81-826e-e78e665e58e8.png",
   "/lovable-uploads/8b35450b-a4aa-4361-bbe3-99f2bb5e90b3.png"
 ];
