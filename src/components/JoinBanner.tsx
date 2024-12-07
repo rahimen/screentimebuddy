@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 
 const users = [
-  "/lovable-uploads/3903b97a-df6a-41fd-934a-7964e6f48aa2.png",
+  "/lovable-uploads/fc85c982-f61f-461a-b728-218fd0b0af8e.png",
   "/lovable-uploads/ae1d7260-d9e8-410f-b0eb-7c87789fe4f9.png",
   "/lovable-uploads/a89e2a64-f187-4d81-826e-e78e665e58e8.png",
   "/lovable-uploads/8b35450b-a4aa-4361-bbe3-99f2bb5e90b3.png"
