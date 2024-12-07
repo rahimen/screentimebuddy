@@ -6,6 +6,7 @@ import PhoneMockup from "@/components/PhoneMockup";
 import Features from "@/components/Features";
 import Testimonials from "@/components/Testimonials";
 import ExpertQuotes from "@/components/ExpertQuotes";
+import JoinBanner from "@/components/JoinBanner";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -44,6 +45,7 @@ const Index = () => {
                 Master Your Digital Habits—Effortlessly Stay Accountable with{" "}
                 <span className="text-accent">ScreenTimeBuddy</span>
               </h1>
+              <JoinBanner />
               <p className="text-lg font-medium text-accent mb-6">
                 Limited spots available for the Beta—Don't miss out!
               </p>
@@ -85,7 +87,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
       {/* How It Works Section */}
       <section className="py-24 bg-secondary">
         <div className="container px-4 mx-auto">
