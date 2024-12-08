@@ -4,23 +4,23 @@ import { motion } from "framer-motion";
 const features = [
   {
     icon: Clock,
-    title: "Connect",
-    description: "Partner with someone you trust to keep each other accountable for screen time goals.",
-  },
-  {
-    icon: Share2,
-    title: "Share",
-    description: "Your screen time data is automatically shared with your buddy daily or weekly.",
+    title: "Stay on Track with Real Accountability",
+    description: "Share your daily screen time with a trusted buddy who motivates and supports you.",
   },
   {
     icon: LineChart,
-    title: "Track",
-    description: "View insights and progress over time to understand your digital habits better.",
+    title: "Visualize Your Progress",
+    description: "Simple charts and insights show where your time goes and how you're improving.",
+  },
+  {
+    icon: Share2,
+    title: "Build Habits That Stick",
+    description: "Set goals and see real, measurable changes over time.",
   },
   {
     icon: Bell,
-    title: "Notify",
-    description: "Get gentle reminders and celebrate achievements with your accountability partner.",
+    title: "Get Support",
+    description: "Celebrate achievements and stay motivated with your accountability partner.",
   },
 ];
 

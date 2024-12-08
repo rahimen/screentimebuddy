@@ -42,16 +42,15 @@ const Index = () => {
                 Beta Access Opening Soon
               </span>
               <h1 className="text-5xl md:text-6xl font-bold mb-4 text-balance">
-                Master Your Digital Habits—Effortlessly Stay Accountable with{" "}
-                <span className="text-accent">ScreenTimeBuddy</span>
+                Take Control of Your Screen Time—With Accountability That{" "}
+                <span className="text-accent">Works!</span>
               </h1>
               <JoinBanner />
               <p className="text-lg font-medium text-accent mb-6">
                 Limited spots available for the Beta—Don't miss out!
               </p>
               <p className="text-lg md:text-xl text-muted-foreground mb-8">
-                Connect with a buddy and automatically share screen time updates.
-                Build better digital habits through accountability.
+                Connect with a buddy to share progress, set goals, and build habits that last.
               </p>
               <form onSubmit={handleSubmit} className="max-w-md">
                 <div className="flex gap-2">
