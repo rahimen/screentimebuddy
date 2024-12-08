@@ -10,8 +10,8 @@ const PhoneMockup = () => {
         {/* Screen Content */}
         <div className="absolute inset-0 w-full h-full rounded-[2.5rem] overflow-hidden bg-white">
           <img
-            src="/lovable-uploads/a89e2a64-f187-4d81-826e-e78e665e58e8.png"
-            alt="Screen time tracking interface showing daily usage statistics"
+            src="/lovable-uploads/31f95fa7-2ab9-4775-ab04-4d5b3c134143.png"
+            alt="Screen time tracking interface showing daily usage statistics and chat messages between buddies"
             className="w-full h-full object-cover"
           />
         </div>
