@@ -42,8 +42,8 @@ const Index = () => {
                 Beta Access Opening Soon
               </span>
               <h1 className="text-5xl md:text-6xl font-bold mb-4 text-balance">
-                Take Control of Your Screen Time—With Accountability That{" "}
-                <span className="text-accent">Works!</span>
+                Take Control of Your Screen Time—With{" "}
+                <span className="text-accent">Accountability</span> That Works!
               </h1>
               <JoinBanner />
               <p className="text-lg font-medium text-accent mb-6">
