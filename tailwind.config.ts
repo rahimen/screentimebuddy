@@ -33,7 +33,7 @@ export default {
           foreground: "#1D1D1F",
         },
         accent: {
-          DEFAULT: "#2ED477",
+          DEFAULT: "#6C37C8", // Changed from #2ED477 to Sendbird purple
           foreground: "#FFFFFF",
         },
         muted: {
