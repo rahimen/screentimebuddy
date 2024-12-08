@@ -50,7 +50,7 @@ const Index = () => {
                 Limited spots available for the Beta—Don't miss out!
               </p>
               <p className="text-lg md:text-xl text-muted-foreground mb-8">
-                Connect with a buddy to share progress, set goals, and build habits that last.
+                Connect with a buddy to automatically share progress, set goals, and build screen habits that last.
               </p>
               <form onSubmit={handleSubmit} className="max-w-md">
                 <div className="flex gap-2">
