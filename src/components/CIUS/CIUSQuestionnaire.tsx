@@ -106,7 +106,7 @@ const CIUSQuestionnaire = () => {
           </Button>
         </>
       ) : (
-        <div className={`space-y-6 ${showEmailCapture ? 'blur-sm' : ''}`}>
+        <div className={`space-y-6 ${showEmailCapture ? 'blur-[2px]' : ''}`}>
           <h4 className="text-xl font-semibold">Your Results</h4>
           <p className="text-4xl font-bold text-accent mb-6">Score: {score}/20</p>
           <p className="text-lg mb-6 leading-relaxed">{getInterpretation(score)}</p>
@@ -125,7 +125,7 @@ const CIUSQuestionnaire = () => {
       )}
 
       {showEmailCapture && (
-        <div className="absolute inset-0 bg-white/80 backdrop-blur-md flex items-center justify-center p-8">
+        <div className="absolute inset-0 bg-white/60 backdrop-blur-sm flex items-center justify-center p-8">
           <Card className="w-full max-w-md p-6">
             <h4 className="text-xl font-semibold mb-4">Your Results Are Ready!</h4>
             <p className="text-muted-foreground mb-6">
