@@ -8,9 +8,12 @@ const CIUSSection = () => {
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Introduction */}
           <div className="text-center animate-fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Assess Your Internet Usage
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              What Does Science Say About Your Phone Use?
             </h2>
+            <h3 className="text-xl md:text-2xl text-muted-foreground mb-6">
+              Take this 60-second scientifically validated test to find out.
+            </h3>
             <p className="text-lg text-muted-foreground leading-relaxed">
               The Compulsive Internet Use Scale (CIUS) is a research-backed tool designed by psychologists 
               to help you better understand your internet habits. Developed by Meerkerk et al. (2009) and 
