@@ -15,11 +15,10 @@ const CIUSSection = () => {
               Take this 60-second scientifically validated test to find out.
             </h3>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              The Compulsive Internet Use Scale (CIUS) is a research-backed tool designed by psychologists 
-              to help you better understand your internet habits. Developed by Meerkerk et al. (2009) and 
-              validated in numerous studies, including Milasauskiene et al. (2021), this scale is widely 
-              regarded as a reliable measure of problematic internet use. Take the short CIUS test below 
-              to assess your internet usage patterns and gain insights into your relationship with the internet.
+              The Compulsive Internet Use Scale (CIUS) is a scientifically validated assessment developed by psychologists 
+              to help you understand your internet habits. Validated by studies like Meerkerk et al. (2009) and 
+              Milasauskiene et al. (2021), it's a trusted measure of problematic internet use. Take the short CIUS test 
+              below to uncover insights into your online behavior.
             </p>
           </div>
 
