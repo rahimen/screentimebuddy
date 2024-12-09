@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import CIUSQuestion from "./CIUSQuestion";
 
@@ -16,6 +17,8 @@ const questions = [
 const CIUSQuestionnaire = () => {
   const [answers, setAnswers] = useState<string[]>(Array(5).fill(""));
   const [showResults, setShowResults] = useState(false);
+  const [email, setEmail] = useState("");
+  const [showEmailCapture, setShowEmailCapture] = useState(false);
 
   const handleAnswer = (index: number, value: string) => {
     const newAnswers = [...answers];
@@ -41,7 +44,20 @@ const CIUSQuestionnaire = () => {
       toast.error("Please answer all questions before submitting.");
       return;
     }
+    setShowEmailCapture(true);
+  };
+
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) {
+      toast.error("Please enter your email to see your results.");
+      return;
+    }
+    // Here you would typically send the email to your backend
+    console.log("Email submitted:", email);
+    setShowEmailCapture(false);
     setShowResults(true);
+    toast.success("Results are ready!");
   };
 
   const handleShare = () => {
@@ -65,13 +81,13 @@ const CIUSQuestionnaire = () => {
   const score = calculateScore();
 
   return (
-    <Card className="glass p-8 max-w-2xl mx-auto animate-fade-up">
+    <Card className="glass p-8 max-w-2xl mx-auto animate-fade-up relative">
       <div className="mb-8">
         <h3 className="text-2xl font-bold mb-2">Compulsive Internet Use Scale (Short CIUS)</h3>
         <Progress value={progress} className="mb-4" />
       </div>
 
-      {!showResults ? (
+      {!showResults && !showEmailCapture ? (
         <>
           {questions.map((question, index) => (
             <CIUSQuestion
@@ -90,7 +106,7 @@ const CIUSQuestionnaire = () => {
           </Button>
         </>
       ) : (
-        <div className="space-y-6">
+        <div className={`space-y-6 ${showEmailCapture ? 'blur-sm' : ''}`}>
           <h4 className="text-xl font-semibold">Your Results</h4>
           <p className="text-4xl font-bold text-accent mb-6">Score: {score}/20</p>
           <p className="text-lg mb-6 leading-relaxed">{getInterpretation(score)}</p>
@@ -105,6 +121,29 @@ const CIUSQuestionnaire = () => {
               Share Results
             </Button>
           </div>
+        </div>
+      )}
+
+      {showEmailCapture && (
+        <div className="absolute inset-0 bg-white/80 backdrop-blur-md flex items-center justify-center p-8">
+          <Card className="w-full max-w-md p-6">
+            <h4 className="text-xl font-semibold mb-4">Your Results Are Ready!</h4>
+            <p className="text-muted-foreground mb-6">
+              Enter your email to see your personalized CIUS results and receive tips for managing screen time.
+            </p>
+            <form onSubmit={handleEmailSubmit} className="space-y-4">
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <Button type="submit" className="w-full bg-accent hover:bg-accent/90">
+                Show My Results
+              </Button>
+            </form>
+          </Card>
         </div>
       )}
     </Card>
