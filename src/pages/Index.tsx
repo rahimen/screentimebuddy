@@ -7,6 +7,7 @@ import Features from "@/components/Features";
 import Testimonials from "@/components/Testimonials";
 import ExpertQuotes from "@/components/ExpertQuotes";
 import JoinBanner from "@/components/JoinBanner";
+import CIUSQuestionnaire from "@/components/CIUS/CIUSQuestionnaire";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -86,6 +87,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+
       {/* How It Works Section */}
       <section className="py-24 bg-secondary">
         <div className="container px-4 mx-auto">
@@ -99,6 +101,21 @@ const Index = () => {
             </p>
           </div>
           <Features />
+        </div>
+      </section>
+
+      {/* CIUS Questionnaire Section */}
+      <section className="py-24 bg-secondary">
+        <div className="container px-4 mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Assess Your Internet Usage
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Take the Compulsive Internet Use Scale (Short CIUS) test to understand your relationship with the internet.
+            </p>
+          </div>
+          <CIUSQuestionnaire />
         </div>
       </section>
 
