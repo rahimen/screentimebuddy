@@ -65,8 +65,8 @@ const CIUSQuestionnaire = () => {
   const score = calculateScore();
 
   return (
-    <Card className="p-6 max-w-2xl mx-auto">
-      <div className="mb-6">
+    <Card className="glass p-8 max-w-2xl mx-auto animate-fade-up">
+      <div className="mb-8">
         <h3 className="text-2xl font-bold mb-2">Compulsive Internet Use Scale (Short CIUS)</h3>
         <Progress value={progress} className="mb-4" />
       </div>
@@ -84,24 +84,24 @@ const CIUSQuestionnaire = () => {
           ))}
           <Button 
             onClick={handleSubmit}
-            className="w-full mt-4"
+            className="w-full mt-6 bg-accent hover:bg-accent/90"
           >
             Submit
           </Button>
         </>
       ) : (
-        <div className="space-y-4">
+        <div className="space-y-6">
           <h4 className="text-xl font-semibold">Your Results</h4>
-          <p className="text-3xl font-bold text-accent mb-4">Score: {score}/20</p>
-          <p className="text-lg mb-4">{getInterpretation(score)}</p>
+          <p className="text-4xl font-bold text-accent mb-6">Score: {score}/20</p>
+          <p className="text-lg mb-6 leading-relaxed">{getInterpretation(score)}</p>
           <p className="text-sm text-muted-foreground italic">
             This test is for informational purposes only and does not constitute a professional diagnosis.
           </p>
-          <div className="flex gap-4 mt-6">
-            <Button onClick={() => setShowResults(false)} variant="outline">
+          <div className="flex gap-4 mt-8">
+            <Button onClick={() => setShowResults(false)} variant="outline" className="flex-1">
               Take Test Again
             </Button>
-            <Button onClick={handleShare}>
+            <Button onClick={handleShare} className="flex-1 bg-accent hover:bg-accent/90">
               Share Results
             </Button>
           </div>

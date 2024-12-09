@@ -18,13 +18,33 @@ const CIUSQuestion = ({ question, value, onChange, index }: CIUSQuestionProps) =
   ];
 
   return (
-    <div className="mb-8">
+    <div className="mb-8 animate-fade-up" style={{ animationDelay: `${index * 100}ms` }}>
       <p className="text-lg font-medium mb-4">{index + 1}. {question}</p>
-      <RadioGroup value={value} onValueChange={onChange} className="flex flex-col space-y-2">
+      <RadioGroup 
+        value={value} 
+        onValueChange={onChange} 
+        className="grid grid-cols-1 md:grid-cols-5 gap-3"
+      >
         {options.map((option) => (
-          <div key={option.value} className="flex items-center space-x-2">
-            <RadioGroupItem value={option.value} id={`q${index}-${option.value}`} />
-            <Label htmlFor={`q${index}-${option.value}`}>{option.label}</Label>
+          <div
+            key={option.value}
+            className={`flex items-center justify-center p-4 rounded-lg border transition-all ${
+              value === option.value
+                ? "border-accent bg-accent/10"
+                : "border-border hover:border-accent/50"
+            }`}
+          >
+            <RadioGroupItem
+              value={option.value}
+              id={`q${index}-${option.value}`}
+              className="hidden"
+            />
+            <Label
+              htmlFor={`q${index}-${option.value}`}
+              className="cursor-pointer text-sm font-medium"
+            >
+              {option.label}
+            </Label>
           </div>
         ))}
       </RadioGroup>
