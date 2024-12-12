@@ -13,7 +13,7 @@ const JoinBanner = () => {
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="flex items-center justify-center gap-2 mb-8"
+      className="flex items-center justify-center gap-2 py-8 px-4 bg-secondary/50 mt-8 mb-0"
     >
       <div className="flex -space-x-3">
         {users.map((avatar, index) => (
