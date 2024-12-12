@@ -11,6 +11,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
+      <JoinBanner />
 
       {/* How It Works Section */}
       <section className="py-16 md:py-24 bg-secondary">
@@ -63,7 +64,6 @@ const Index = () => {
       </section>
 
       <CTASection />
-      <JoinBanner />
       <Footer />
     </div>
   );
