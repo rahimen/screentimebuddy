@@ -5,10 +5,12 @@ import CIUSSection from "@/components/CIUS/CIUSSection";
 import HeroSection from "@/components/landing/HeroSection";
 import CTASection from "@/components/landing/CTASection";
 import Footer from "@/components/landing/Footer";
+import JoinBanner from "@/components/JoinBanner";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <JoinBanner />
       <HeroSection />
 
       {/* How It Works Section */}
