@@ -10,7 +10,6 @@ import JoinBanner from "@/components/JoinBanner";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <JoinBanner />
       <HeroSection />
 
       {/* How It Works Section */}
@@ -64,6 +63,7 @@ const Index = () => {
       </section>
 
       <CTASection />
+      <JoinBanner />
       <Footer />
     </div>
   );
