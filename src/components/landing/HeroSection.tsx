@@ -3,26 +3,54 @@ import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import PhoneMockup from "@/components/PhoneMockup";
+import { useToast } from "@/components/ui/use-toast";
 
 const HeroSection = () => {
   const [email, setEmail] = useState("");
   const [showAlert, setShowAlert] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Replace this with your Zapier webhook URL
+  const ZAPIER_WEBHOOK_URL = "YOUR_ZAPIER_WEBHOOK_URL";
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Email submitted:", email);
-    setEmail("");
-    setShowAlert(true);
-    setTimeout(() => setShowAlert(false), 3000);
+    setIsLoading(true);
+
+    try {
+      const response = await fetch(ZAPIER_WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
+        body: JSON.stringify({
+          email: email,
+          timestamp: new Date().toISOString(),
+          source: window.location.origin
+        }),
+      });
+
+      setEmail("");
+      toast({
+        title: "Success!",
+        description: "Thanks for joining! We'll be in touch soon.",
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-12 md:py-20">
-      {showAlert && (
-        <Alert className="fixed top-4 right-4 w-auto bg-accent text-white animate-fade-in">
-          <AlertDescription>Thanks for joining! We'll be in touch soon.</AlertDescription>
-        </Alert>
-      )}
       <div className="container px-4 mx-auto">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
@@ -56,10 +84,15 @@ const HeroSection = () => {
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
+                  disabled={isLoading}
+                  className="px-6 py-3 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-colors flex items-center justify-center gap-2 whitespace-nowrap disabled:opacity-50"
                 >
-                  Reserve Your Spot
-                  <ChevronRight className="w-4 h-4" />
+                  {isLoading ? "Submitting..." : (
+                    <>
+                      Reserve Your Spot
+                      <ChevronRight className="w-4 h-4" />
+                    </>
+                  )}
                 </button>
               </div>
               <p className="text-sm text-muted-foreground mt-2">
