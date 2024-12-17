@@ -3,21 +3,30 @@ import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import PhoneMockup from "@/components/PhoneMockup";
 import { useToast } from "@/components/ui/use-toast";
+import { Input } from "@/components/ui/input";
 
 const HeroSection = () => {
   const [email, setEmail] = useState("");
+  const [webhookUrl, setWebhookUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
-
-  // Replace this with your Zapier webhook URL that connects to Google Sheets
-  const ZAPIER_WEBHOOK_URL = "YOUR_ZAPIER_WEBHOOK_URL";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
+    if (!webhookUrl) {
+      toast({
+        title: "Error",
+        description: "Please set up your Zapier webhook URL first",
+        variant: "destructive",
+      });
+      setIsLoading(false);
+      return;
+    }
+
     try {
-      const response = await fetch(ZAPIER_WEBHOOK_URL, {
+      const response = await fetch(webhookUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -70,6 +79,21 @@ const HeroSection = () => {
             <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
               Connect with a buddy to automatically share progress, set goals, and build screen habits that last.
             </p>
+
+            {/* Admin section for webhook URL */}
+            <div className="mb-4">
+              <Input
+                type="text"
+                value={webhookUrl}
+                onChange={(e) => setWebhookUrl(e.target.value)}
+                placeholder="Enter your Zapier webhook URL"
+                className="mb-2"
+              />
+              <p className="text-xs text-muted-foreground">
+                Admin: Set up your Zapier webhook URL here to connect with Google Sheets
+              </p>
+            </div>
+
             <form onSubmit={handleSubmit} className="max-w-md">
               <div className="flex flex-col sm:flex-row gap-3">
                 <input
