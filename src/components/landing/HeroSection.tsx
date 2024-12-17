@@ -1,17 +1,15 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 import PhoneMockup from "@/components/PhoneMockup";
 import { useToast } from "@/components/ui/use-toast";
 
 const HeroSection = () => {
   const [email, setEmail] = useState("");
-  const [showAlert, setShowAlert] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  // Replace this with your Zapier webhook URL
+  // Replace this with your Zapier webhook URL that connects to Google Sheets
   const ZAPIER_WEBHOOK_URL = "YOUR_ZAPIER_WEBHOOK_URL";
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -35,7 +33,7 @@ const HeroSection = () => {
       setEmail("");
       toast({
         title: "Success!",
-        description: "Thanks for joining! We'll be in touch soon.",
+        description: "Thanks for joining! Your email has been recorded.",
       });
     } catch (error) {
       console.error("Error submitting form:", error);
