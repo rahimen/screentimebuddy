@@ -1,44 +1,56 @@
 import { motion } from "framer-motion";
 
-const testimonials = [
+const sciencePoints = [
   {
-    name: "Sarah Chen",
-    title: "Product Designer",
-    quote: "Accountability transformed how I use my phone. Can't wait for ScreenTimeBuddy to launch!",
+    title: "Accountability increases goal achievement by up to 95%.",
+    description: "People who share their goals and progress with a partner are significantly more likely to succeed. In fact, committing to regular check-ins boosts the likelihood of achieving goals by up to 95%.",
+    source: "Matthews, G. (2015), Dominican University Study on Accountability and Goal Setting."
   },
   {
-    name: "Michael Rodriguez",
-    title: "Software Engineer",
-    quote: "Having a buddy system for screen time is genius. This is exactly what I needed.",
+    title: "Social pressure reduces distractions and improves focus.",
+    description: "The presence of another person or awareness that someone is observing your progress can reduce distractions and improve performance by up to 32%.",
+    source: "Zajonc, R. B. (1965), \"Social Facilitation,\" Science."
   },
   {
-    name: "Emma Thompson",
-    title: "Content Creator",
-    quote: "As someone who struggles with phone addiction, this app gives me hope for better habits.",
+    title: "Precommitment improves results and builds stronger habits.",
+    description: "Precommitting to specific goals creates a psychological commitment that drives better follow-through and builds lasting habits.",
+    source: "Ariely, D., and Wertenbroch, K. (2002), \"Procrastination, Deadlines, and Performance,\" Psychological Science."
   },
+  {
+    title: "Accountability partners double the likelihood of long-term success.",
+    description: "Research shows that having an accountability partner significantly increases the odds of maintaining long-term behavior changes, such as reducing screen time.",
+    source: "American Society of Training and Development (ASTD)."
+  }
 ];
 
 const Testimonials = () => {
   return (
-    <div className="grid md:grid-cols-3 gap-8">
-      {testimonials.map((testimonial, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.2 }}
-          className="glass p-6 rounded-2xl"
-        >
-          <div className="flex items-center gap-4 mb-4">
-            <div className="w-12 h-12 rounded-full bg-accent/10" />
-            <div>
-              <h4 className="font-semibold">{testimonial.name}</h4>
-              <p className="text-sm text-muted-foreground">{testimonial.title}</p>
-            </div>
-          </div>
-          <p className="text-muted-foreground">{testimonial.quote}</p>
-        </motion.div>
-      ))}
+    <div className="space-y-8">
+      <div className="text-center mb-8">
+        <p className="text-muted-foreground">
+          Research shows that accountability, social connection, and precommitment are powerful tools for improving focus and achieving goals. Here's what the science says:
+        </p>
+      </div>
+      <div className="grid md:grid-cols-2 gap-8">
+        {sciencePoints.map((point, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.2 }}
+            className="glass p-6 rounded-2xl"
+          >
+            <h4 className="font-semibold mb-3">{point.title}</h4>
+            <p className="text-muted-foreground mb-4">{point.description}</p>
+            <p className="text-sm text-muted-foreground italic">{point.source}</p>
+          </motion.div>
+        ))}
+      </div>
+      <div className="text-center mt-8">
+        <p className="text-muted-foreground">
+          Screen Time Buddy combines these proven principles to make accountability simple and effective, empowering you to take control of your screen time habits.
+        </p>
+      </div>
     </div>
   );
 };

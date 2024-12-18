@@ -47,15 +47,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Science Behind Section */}
       <section className="py-16 md:py-24">
         <div className="container px-4 mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
-              Why Accountability Works for Screen Time Management
+              The Science Behind Screen Time Buddy
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Join thousands of others who are taking control of their digital habits.
+              Leveraging the science of accountability to keep you focused.
             </p>
           </div>
           <Testimonials />
