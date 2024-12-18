@@ -9,15 +9,16 @@ const HeroSection = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
   
-  // Hardcode the webhook URL instead of showing the input
+  // You can replace this with your own Zapier webhook URL
   const webhookUrl = "https://hooks.zapier.com/hooks/catch/21046317/2spegb6/";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    console.log("Submitting email to Zapier:", email);
 
     try {
-      const response = await fetch(webhookUrl, {
+      await fetch(webhookUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -26,14 +27,14 @@ const HeroSection = () => {
         body: JSON.stringify({
           email: email,
           timestamp: new Date().toISOString(),
-          source: window.location.origin
+          source: "hero_section"
         }),
       });
 
       setEmail("");
       toast({
         title: "Success!",
-        description: "Thanks for joining! Your email has been recorded.",
+        description: "Thanks for joining! We'll be in touch soon.",
       });
     } catch (error) {
       console.error("Error submitting form:", error);
