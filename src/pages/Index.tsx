@@ -36,12 +36,11 @@ const Index = () => {
         <div className="container px-4 mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
-              Follow the Advice of World-Class Experts in Habit Building and Performance
+              The Power of Accountability: What The Experts Say
             </h2>
             <p className="text-muted-foreground max-w-3xl mx-auto">
-              ScreenTimeBuddy integrates principles from the world's top habit and performance experts
-              to help you achieve your goals. Here's what they say about the power of accountability
-              and building better habits.
+              Accountability is a proven driver of habit change and performance. World-class experts agree that 
+              sharing your goals and progress with others can unlock lasting results.
             </p>
           </div>
           <ExpertQuotes />
