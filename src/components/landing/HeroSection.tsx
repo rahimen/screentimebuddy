@@ -9,26 +9,25 @@ const HeroSection = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
   
-  // You can replace this with your own Zapier webhook URL
-  const webhookUrl = "https://hooks.zapier.com/hooks/catch/21046317/2spegb6/";
-
+  // Replace this URL with your Google Form submission URL
+  const formUrl = "https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse";
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    console.log("Submitting email to Zapier:", email);
+    console.log("Submitting email:", email);
 
     try {
-      await fetch(webhookUrl, {
+      // Google Forms requires form field names like "entry.1234567890"
+      // Replace ENTRY_ID with your actual form field ID
+      const formData = new FormData();
+      formData.append('entry.ENTRY_ID', email);
+      
+      // Using no-cors mode as Google Forms doesn't support CORS
+      await fetch(formUrl, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
         mode: "no-cors",
-        body: JSON.stringify({
-          email: email,
-          timestamp: new Date().toISOString(),
-          source: "hero_section"
-        }),
+        body: formData,
       });
 
       setEmail("");

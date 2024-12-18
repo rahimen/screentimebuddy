@@ -6,26 +6,22 @@ const CTASection = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  // Use the same webhook URL as HeroSection
-  const webhookUrl = "https://hooks.zapier.com/hooks/catch/21046317/2spegb6/";
+  // Use the same Google Form URL as HeroSection
+  const formUrl = "https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    console.log("Submitting email to Zapier:", email);
+    console.log("Submitting email:", email);
 
     try {
-      await fetch(webhookUrl, {
+      const formData = new FormData();
+      formData.append('entry.ENTRY_ID', email);
+      
+      await fetch(formUrl, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
         mode: "no-cors",
-        body: JSON.stringify({
-          email: email,
-          timestamp: new Date().toISOString(),
-          source: "cta_section"
-        }),
+        body: formData,
       });
 
       setEmail("");
