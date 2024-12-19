@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 
 const sciencePoints = [
   {
-    title: "Accountability increases goal achievement by up to 95%.",
-    description: "People who share their goals and progress with a partner are significantly more likely to succeed. In fact, committing to regular check-ins boosts the likelihood of achieving goals by up to 95%.",
+    title: "Accountability significantly increases the likelihood of achieving your goals.",
+    description: "Research by Dr. Gail Matthews at Dominican University found that people who write down their goals and share updates with a friend are 76% more likely to achieve them compared to 43% for those who don't. This highlights the powerful impact of combining written goals with accountability.",
     source: "Matthews, G. (2015), Dominican University Study on Accountability and Goal Setting."
   },
   {
