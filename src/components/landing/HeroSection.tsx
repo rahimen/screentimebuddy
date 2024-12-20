@@ -61,15 +61,26 @@ const HeroSection = () => {
               Beta Access Opening Soon
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-balance leading-tight">
-              Take Control of Your Screen Time—With{" "}
-              <span className="text-accent">Accountability</span> That Works!
+              Break Free from Endless Scrolling—With the Power of{" "}
+              <span className="text-accent">Accountability!</span>
             </h1>
             <p className="text-lg font-medium text-accent mb-4 md:mb-6">
-              Limited spots available for the Beta—Don't miss out!
+              Say goodbye to wasted hours. Pair up with a buddy (friend or matched by us) to track your screen time automatically, set goals, and build habits that stick—all with a little accountability.
             </p>
-            <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
-              Connect with a buddy to automatically share progress, set goals, and build screen habits that last.
-            </p>
+            <ul className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8 space-y-3">
+              <li className="flex items-start gap-2">
+                <ChevronRight className="mt-1 w-4 h-4 text-accent shrink-0" />
+                <span>Track Effortlessly: Syncs seamlessly with your phone's built-in screen time tools. No manual setup needed.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <ChevronRight className="mt-1 w-4 h-4 text-accent shrink-0" />
+                <span>Stay Private: Your screen time data is secure and only shared with your chosen buddy.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <ChevronRight className="mt-1 w-4 h-4 text-accent shrink-0" />
+                <span>Choose Your Buddy: Invite a friend or let us match you with someone who shares your goals.</span>
+              </li>
+            </ul>
 
             <form onSubmit={handleSubmit} className="max-w-md">
               <div className="flex flex-col sm:flex-row gap-3">
@@ -88,14 +99,14 @@ const HeroSection = () => {
                 >
                   {isLoading ? "Submitting..." : (
                     <>
-                      Reserve Your Spot
+                      Reserve My Beta Spot
                       <ChevronRight className="w-4 h-4" />
                     </>
                   )}
                 </button>
               </div>
               <p className="text-sm text-muted-foreground mt-2">
-                Sign up for Beta access today. Spots are filling fast!
+                Beta spots are limited—don't miss your chance to take control of your screen time!
               </p>
             </form>
           </motion.div>
