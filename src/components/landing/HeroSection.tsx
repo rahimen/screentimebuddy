@@ -65,20 +65,20 @@ const HeroSection = () => {
               <span className="text-accent">Accountability!</span>
             </h1>
             <p className="text-lg font-medium text-accent mb-4 md:mb-6">
-              Say goodbye to wasted hours. Pair up with a buddy (friend or matched by us) to track your screen time automatically, set goals, and build habits that stick—all with a little accountability.
+              Pair up with a buddy (friend or matched by us) to track your screen time, set goals, and build habits that last—all automatically.
             </p>
             <ul className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8 space-y-3">
               <li className="flex items-start gap-2">
                 <ChevronRight className="mt-1 w-4 h-4 text-accent shrink-0" />
-                <span>Track Effortlessly: Syncs seamlessly with your phone's built-in screen time tools. No manual setup needed.</span>
+                <span>Effortless Tracking: Syncs with your phone's built-in tools.</span>
               </li>
               <li className="flex items-start gap-2">
                 <ChevronRight className="mt-1 w-4 h-4 text-accent shrink-0" />
-                <span>Stay Private: Your screen time data is secure and only shared with your chosen buddy.</span>
+                <span>Total Privacy: Your data is secure and only shared with your buddy.</span>
               </li>
               <li className="flex items-start gap-2">
                 <ChevronRight className="mt-1 w-4 h-4 text-accent shrink-0" />
-                <span>Choose Your Buddy: Invite a friend or let us match you with someone who shares your goals.</span>
+                <span>Buddy Your Way: Invite a friend or let us match you.</span>
               </li>
             </ul>
 
@@ -106,7 +106,7 @@ const HeroSection = () => {
                 </button>
               </div>
               <p className="text-sm text-muted-foreground mt-2">
-                Beta spots are limited—don't miss your chance to take control of your screen time!
+                Spots are limited—don't miss your chance to take control of your screen time!
               </p>
             </form>
           </motion.div>
