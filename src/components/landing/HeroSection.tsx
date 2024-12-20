@@ -89,7 +89,7 @@ const HeroSection = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email for early access"
-                  className="flex-1 min-w-[300px] px-4 py-3 rounded-lg border bg-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-accent"
+                  className="flex-1 min-w-[350px] px-4 py-3 rounded-lg border bg-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-accent"
                   required
                 />
                 <button
