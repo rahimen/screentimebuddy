@@ -23,7 +23,7 @@ const JoinBanner = () => {
         ))}
       </div>
       <p className="text-sm font-medium">
-        Join <span className="text-accent font-bold">1,000+</span> already using the ScreenTimeBuddy app
+        Help shape the future of ScreenTimeBuddy as one of our exclusive beta users
       </p>
     </motion.div>
   );
